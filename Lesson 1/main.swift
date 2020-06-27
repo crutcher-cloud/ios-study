@@ -23,7 +23,7 @@ func quadraticEquation() {
     print("Введите значение коэффицента b:")
     let b = input()
 
-    print("Введите значение коэффицента b:")
+    print("Введите значение коэффицента c:")
     let c = input()
 
     let discriminant: Double = pow(Double(b), 2) - Double(4 * a * c)
