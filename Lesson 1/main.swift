@@ -45,7 +45,7 @@ func triangle() {
     print("Введите значение первого катета:")
     let cathetusOne = input()
     
-    print("Введите значение первого катета:")
+    print("Введите значение второго катета:")
     let cathetusTwo = input()
     
     print("Катеты равны: \(cathetusOne)см. и \(cathetusTwo)см.\n-------------------------")
