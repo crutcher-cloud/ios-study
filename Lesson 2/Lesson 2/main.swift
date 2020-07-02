@@ -8,6 +8,11 @@
 
 import Foundation
 
+func getValueFromCommandLine() -> Int {
+    let inputValue = readLine()
+    return (Int(inputValue!) ?? 0)
+}
+
 func isDivide(_ divident: Int, _ divider: Int) -> Bool {
     if divident % divider == 0 {
         return true
