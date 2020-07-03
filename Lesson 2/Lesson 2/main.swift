@@ -14,11 +14,7 @@ func getValueFromCommandLine() -> Int {
 }
 
 func isDivide(_ dividend: Int, _ divider: Int) -> Bool {
-    if dividend % divider == 0 {
-        return true
-    } else {
-        return false
-    }
+    return dividend % divider == 0
 }
 
 func createArray(startValue: Int, itemsCount: Int) -> Array<Int> {
@@ -29,7 +25,7 @@ func createArray(startValue: Int, itemsCount: Int) -> Array<Int> {
     return array
 }
 
-func addFibonachiNumber(_ userArray: Array<UInt>) -> Array<UInt> {
+func addFibonachiNumber(_ userArray: Array<Decimal>) -> Array<Decimal> {
     var array = userArray
     let f1 = array[array.count-1]
     let f2 = array[array.count-2]
@@ -68,11 +64,11 @@ for item in array {
 
 print("Финальное значение массива: \(array)\n")
 
-var fibonArray: [UInt] = [0,1]
+var fibonArray: [Decimal] = [0,1]
 
 print("Начальное значение массива с числами Фибоначчи: \(fibonArray)")
 
-for _ in 0...89 {
+for _ in 0...99 {
     fibonArray = addFibonachiNumber(fibonArray)
 }
 
