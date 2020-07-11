@@ -51,17 +51,6 @@ class SportCar: Car {
     var clearance: Int
     var isSpoilerActive: Bool
     
-    func doAction() {
-        switch isSpoilerActive {
-        case true:
-            print("Спойлер опущен!\n")
-            isSpoilerActive = false
-        case false:
-            print("Спойлер поднят!\n")
-            isSpoilerActive = true
-        }
-    }
-    
     func increaseClearance(value: Int) {
         clearance += value
         print("Клиренс увеличен на \(value). Текущее значение: \(clearance)\n")
@@ -84,6 +73,31 @@ class SportCar: Car {
     }
 }
 
+extension SportCar {
+    func doAction() {
+        switch isSpoilerActive {
+        case true:
+            print("Спойлер опущен!\n")
+            isSpoilerActive = false
+        case false:
+            print("Спойлер поднят!\n")
+            isSpoilerActive = true
+        }
+    }
+}
+
+extension SportCar: CustomStringConvertible {
+    var description: String {
+        return """
+        Это спортивная машина.
+        Марка: \(brandName)
+        Цвет: \(color)
+        Идентификационный номер: \(VIN)
+        Клиренс: \(clearance)\n
+        """
+    }
+}
+
 class TrunkCar: Car {
     var brandName: String
     var VIN: String
@@ -97,10 +111,6 @@ class TrunkCar: Car {
         get {
             return bodyCapacity - currentCargo
         }
-    }
-    
-    func doAction() {
-        print("B-E-E-E-P!\n")
     }
     
     func addCargo(newCargo: Int) {
@@ -133,15 +143,9 @@ class TrunkCar: Car {
     }
 }
 
-extension SportCar: CustomStringConvertible {
-    var description: String {
-        return """
-        Это спортивная машина.
-        Марка: \(brandName)
-        Цвет: \(color)
-        Идентификационный номер: \(VIN)
-        Клиренс: \(clearance)\n
-        """
+extension TrunkCar {
+    func doAction() {
+        print("B-E-E-E-P!\n")
     }
 }
 
